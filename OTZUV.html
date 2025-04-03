@@ -37,14 +37,51 @@
 			</ul>
 		</nav>
 	</hab>
-        <div class="main_bg">
-            <p class="probel"></p>
-            <p class="Oglav">Организация похорон в Санкт-Петербурге и Ленинградской области</p>
-            <p class="main_info">Организация похорон в Санкт-Петербурге и Ленинградской области может быть вверена профессионалам ритуального дела. Наша команда специалистов оперативно решает любые, даже сложнейшие задачи, связанные с процедурой погребения. Услуги предоставляются в соответствии с госстандартами на соответствующие категории работ. Мы не наживается на горе и работает честно и по минимальным расценкам. Положительная репутация службы помогает нам быть востребованными. Многие обращаются к нам по рекомендации.</p>
-            <p class="Oglav">Помните!</p>
-            <p class="main_info">Если к вам приехали незнакомые люди, в т. ч. агенты похоронных служб, которых вы не вызывали, не открывайте дверь. Данные лица, вероятно, мошенники, купившие информацию о смерти у диспетчеров экстренных служб.</p>
-            <p class="main_info">Они нарушают закон – <a href="https://www.consultant.ru/document/cons_doc_LAW_10699/8012ecdf64b7c9cfd62e90d7f55f9b5b7b72b755/?ysclid=m2fxzj5vo470748749" target="_blank">ст. 159 УК РФ.</a></p>
+	<h1 class="CENTERS"></h1>
+     <main class="reviews-container">
+        <h1>Отзывы наших клиентов</h1>
+        
+        <!-- Форма для добавления отзыва -->
+        <div class="add-review">
+            <h2>Оставить отзыв</h2>
+            <form id="review-form">
+                <div class="form-group">
+                    <label for="review-name">Ваше имя:</label>
+                    <input type="text" id="review-name" name="review-name" required minlength="2" maxlength="50">
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-email">Email:</label>
+                    <input type="email" id="review-email" name="review-email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-rating">Оценка:</label>
+                    <select id="review-rating" name="review-rating" required>
+                        <option value="">Выберите оценку</option>
+                        <option value="5">Отлично (5)</option>
+                        <option value="4">Хорошо (4)</option>
+                        <option value="3">Удовлетворительно (3)</option>
+                        <option value="2">Плохо (2)</option>
+                        <option value="1">Ужасно (1)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-text">Текст отзыва:</label>
+                    <textarea id="review-text" name="review-text" rows="5" required minlength="10" maxlength="1000"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Отправить отзыв</button>
+            </form>
         </div>
+        
+        <!-- Список отзывов -->
+        <div class="reviews-list" id="reviews-list">
+            <!-- Отзывы будут загружаться здесь -->
+            <div class="no-reviews">Пока нет отзывов. Будьте первым!</div>
+        </div>
+    </main>  
 	<footer class="fotr">
 		<p>Телефон: +7-800-200-01-22</p>
 		<p>Адрес: Санкт-Петербург Шафировский пр., д. 10 к. 3 стр. 1</p>
@@ -171,6 +208,91 @@
                     registerModal.style.display = 'none';
                 }
             });
+			document.addEventListener('DOMContentLoaded', function() {
+			// Получаем элементы формы
+			const reviewForm = document.getElementById('review-form');
+			const reviewsList = document.getElementById('reviews-list');
+			
+			// Загружаем отзывы при загрузке страницы
+			loadReviews();
+			
+			// Обработчик отправки формы
+			reviewForm.addEventListener('submit', function(e) {
+				e.preventDefault();
+				
+				// Получаем данные из формы
+				const name = document.getElementById('review-name').value;
+				const email = document.getElementById('review-email').value;
+				const rating = document.getElementById('review-rating').value;
+				const text = document.getElementById('review-text').value;
+				
+				// Создаем объект отзыва
+				const review = {
+					name: name,
+					email: email,
+					rating: rating,
+					text: text,
+					date: new Date().toLocaleDateString('ru-RU')
+				};
+				
+				// Сохраняем отзыв
+				saveReview(review);
+				
+				// Очищаем форму
+				reviewForm.reset();
+				
+				// Обновляем список отзывов
+				loadReviews();
+				
+				// Показываем сообщение об успехе
+				alert('Спасибо за ваш отзыв! Он будет опубликован после проверки.');
+			});
+			
+			// Функция для загрузки отзывов
+			function loadReviews() {
+				// Получаем отзывы из localStorage
+				let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+				
+				// Очищаем список отзывов
+				reviewsList.innerHTML = '';
+				
+				// Если нет отзывов, показываем сообщение
+				if (reviews.length === 0) {
+					reviewsList.innerHTML = '<div class="no-reviews">Пока нет отзывов. Будьте первым!</div>';
+					return;
+				}
+				
+				// Сортируем отзывы по дате (новые сначала)
+				reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+				
+				// Добавляем каждый отзыв в список
+				reviews.forEach(review => {
+					const reviewElement = document.createElement('div');
+					reviewElement.className = 'review';
+					reviewElement.innerHTML = `
+						<div class="review-header">
+							<span class="review-author">${review.name}</span>
+							<span class="review-date">${review.date}</span>
+						</div>
+						<div class="review-rating">Оценка: ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</div>
+						<div class="review-text">${review.text}</div>
+					`;
+					reviewsList.appendChild(reviewElement);
+				});
+			}
+			
+			// Функция для сохранения отзыва
+			function saveReview(review) {
+				// Получаем существующие отзывы
+				let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+				
+				// Добавляем новый отзыв
+				reviews.push(review);
+				
+				// Сохраняем обратно в localStorage
+				localStorage.setItem('reviews', JSON.stringify(reviews));
+			}
+		});
         </script>
 	</body>
 </html>
