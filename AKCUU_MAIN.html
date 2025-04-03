@@ -1,0 +1,185 @@
+<html lang="ru">
+    <head>
+        <link rel="stylesheet" href="Main.css">
+        <meta charset="UTF-8">
+        <title>Ритуальные услуги</title>
+    </head>
+	<body>
+	<hab>
+		<a href="index.html" class="LOGO">Вечный покой</a>
+		<nav>
+			<ul>
+				<li><a href="USLUGU.html">Услуги</a>
+					<ul>
+						<li><a href="USLUGU/CREM.html">Кремация</a></li>
+						<li><a href="USLUGU/ZAHR.html">Захоронения</a></li>
+						<li><a href="USLUGU/GRUZ 200.html">Груз 200</a></li>
+					</ul>
+				</li>
+				<li><a href="PREDMET.html">Ритуальные товары</a>
+					<ul>
+						<li><a href="PREDMET/YRNU.html">Урны для праха</a></li>
+						<li><a href="PREDMET/VENKU.html">Венки</a></li>
+						<li><a href="PREDMET/GORB.html">Гробы</a></li>
+						<li><a href="PREDMET/ODEJDA.html">Одежда</a></li>
+						<li><a href="#">Памятник</a></li>
+						<li><a href="PREDMET/KREST.html">Крест</a></li>
+						<li><a href="#">Усыпальня</a></li> 
+					</ul>
+				</li>
+				<li><a href="FAQ.html">Справочная информация</a></li>
+				<li><a href="CONTACT.html">Контакты</a></li>
+				<li><a href="AGENT.html">Вызвать агента</a></li>
+				<li><a href="#">Отзовы</a></li>
+				<li><a href="AKCUU_MAIN.html">Акции</a></li>
+				<li><a href="#" id="login-btn">Вход</a></li>
+                <li><a href="#" id="register-btn">Регистрация</a></li>
+			</ul>
+		</nav>
+	</hab>
+    <div class="contents">
+            <p class="Second_hab">Акции похоронного бюро "Вечный покой"</p>
+            <table class="table_us">
+                <tr class="wow">
+                    <td><a href="AKCUU/SPEC.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwTVsB1L2tLLmxOgIIGE9udfBx9awJKVxybg&s"></a></td>
+                    <td><a href="AKCUU/SPEC.html"><p class="podis_tabl">Специальные предложения</p>
+                        <p class="opis_tabl">Специальные предложения это не просто акция, а предложение, которое действует только в определённые дни.</p>
+                    </a></td>
+                </tr>
+                <tr class="wow">
+                    <td><a href="AKCUU/AKCUU.html"><img src="https://static.insales-cdn.com/files/1/5522/8492434/original/%D0%98%D0%B4%D0%B5%D0%B8%D0%90%D0%BA%D1%86%D0%B8%D0%B812.jpg"></a></td>
+                    <td><a href="AKCUU/AKCUU.html"><p class="podis_tabl">Акции</p>
+                        <p class="opis_tabl">Выгодные предложения на несколько дней! Успейте сэкономить на покупках ритуальных предметов и услуг.</p>
+                    </a></td>
+                </tr>
+            </table>
+    </div>
+	<footer class="fotr">
+		<p>Телефон: +7-800-200-01-22</p>
+		<p>Адрес: Санкт-Петербург Шафировский пр., д. 10 к. 3 стр. 1</p>
+        <p>© Ритуальное Агентство "Вечный покой" || Ритуальные услуги в Санкт-Петербурге</p>
+	</footer>
+	<!-- Модальное окно для входа -->
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 class="h2reg">Вход</h2>
+                <form id="login-form">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="login-email" placeholder="Введите ваш email" maxlength="50" required>
+
+                    <label for="login-password">Пароль:</label>
+                    <input type="password" id="login-password" name="login-password" placeholder="Введите пароль" minlength="8" maxlength="20" required>
+
+                    <button type="submit" class="btn">Войти</button>
+                </form>
+                <p>Нет аккаунта? <a href="#" id="switch-to-register">Зарегистрируйтесь</a></p>
+            </div>
+        </div>
+
+        <!-- Модальное окно для регистрации -->
+        <div id="register-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 class="h2reg">Регистрация</h2>
+                <form id="register-form">
+                    <label for="reg-name">Имя:</label>
+                    <input type="text" id="reg-name" name="reg-name" placeholder="Введите имя" maxlength="20" required>
+
+                    <label for="reg-surname">Фамилия:</label>
+                    <input type="text" id="reg-surname" name="reg-surname" placeholder="Введите фамилию" maxlength="20" required>
+
+                    <label for="reg-patronymic">Отчество:</label>
+                    <input type="text" id="reg-patronymic" name="reg-patronymic" placeholder="Введите отчество" maxlength="20" required>
+
+                    <label for="reg-birthdate">Дата рождения:</label>
+                    <input type="date" id="reg-birthdate" name="reg-birthdate" required>
+
+                    <label for="reg-email">Email:</label>
+                    <input type="email" id="reg-email" name="reg-email" placeholder="Введите ваш email" maxlength="50" required>
+
+                    <label for="reg-phone">Телефон:</label>
+                    <input type="tel" id="reg-phone" placeholder="+7XXXXXXXXXX" pattern="^\+7\d{10}$" maxlength="12" required />
+
+                    <label for="reg-password">Пароль:</label>
+                    <input type="password" id="reg-password" name="reg-password" placeholder="Введите пароль" minlength="8" maxlength="20" required>
+
+                    <label for="reg-confirm-password">Подтверждение пароля:</label>
+                    <input type="password" id="reg-confirm-password" name="reg-confirm-password" placeholder="Повторите пароль" minlength="8" maxlength="20" required>
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="reg-consent" name="reg-consent" required>
+                        <label for="reg-consent">Я согласен(а) на обработку персональных данных</label>
+                    </div>
+
+                    <button type="submit" class="btn">Зарегистрироваться</button>
+                </form>
+                <p>Уже есть аккаунт? <a href="#" id="switch-to-login">Войдите</a></p>
+            </div>
+        </div>
+
+         <!-- Скрипт для работы модальных окон -->
+        <script>
+            // Получаем элементы модальных окон
+            const loginModal = document.getElementById('login-modal');
+            const registerModal = document.getElementById('register-modal');
+
+            // Кнопки для открытия модальных окон
+            const loginBtn = document.getElementById('login-btn');
+            const registerBtn = document.getElementById('register-btn');
+
+            // Ссылки для переключения между окнами
+            const switchToRegister = document.getElementById('switch-to-register');
+            const switchToLogin = document.getElementById('switch-to-login');
+
+            // Кнопки закрытия (крестики)
+            const closeButtons = document.querySelectorAll('.close-btn');
+
+            // Открытие модального окна входа
+            loginBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginModal.style.display = 'block';
+                registerModal.style.display = 'none';
+            });
+
+            // Открытие модального окна регистрации
+            registerBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                registerModal.style.display = 'block';
+                loginModal.style.display = 'none';
+            });
+
+            // Переключение на окно регистрации
+            switchToRegister.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'block';
+            });
+
+            // Переключение на окно входа
+            switchToLogin.addEventListener('click', function(e) {
+                e.preventDefault();
+                registerModal.style.display = 'none';
+                loginModal.style.display = 'block';
+            });
+
+            // Закрытие всех модальных окон при нажатии на крестик
+            closeButtons.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    loginModal.style.display = 'none';
+                    registerModal.style.display = 'none';
+                });
+            });
+
+            // Закрытие модального окна при клике вне его содержания
+            window.addEventListener('click', function(e) {
+                if (e.target === loginModal) {
+                    loginModal.style.display = 'none';
+                }
+                if (e.target === registerModal) {
+                    registerModal.style.display = 'none';
+                }
+            });
+        </script>
+	</body>
+</html>

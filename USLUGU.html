@@ -1,0 +1,132 @@
+<html lang="ru">
+    <head>
+        <link rel="stylesheet" href="Main.css">
+        <meta charset="UTF-8">
+        <title>Ритуальные услуги</title>
+    </head>
+	<body>
+	<hab>
+		<a href="index.html" class="LOGO">Вечный покой</a>
+		<nav>
+			<ul>
+				<li><a href="USLUGU.html">Услуги</a>
+					<ul>
+						<li><a href="USLUGU/CREM.html">Кремация</a></li>
+						<li><a href="USLUGU/ZAHR.html">Захоронения</a></li>
+						<li><a href="USLUGU/GRUZ 200.html">Груз 200</a></li>
+					</ul>
+				</li>
+				<li><a href="PREDMET.html">Ритуальные товары</a>
+					<ul>
+						<li><a href="PREDMET/YRNU.html">Урны для праха</a></li>
+						<li><a href="PREDMET/VENKU.html">Венки</a></li>
+						<li><a href="PREDMET/GORB.html">Гробы</a></li>
+						<li><a href="PREDMET/ODEJDA.html">Одежда</a></li>
+						<li><a href="#">Памятник</a></li>
+						<li><a href="PREDMET/KREST.html">Крест</a></li>
+						<li><a href="#">Усыпальня</a></li> 
+					</ul>
+				</li>
+				<li><a href="FAQ.html">Справочная информация</a></li>
+				<li><a href="CONTACT.html">Контакты</a></li>
+				<li><a href="AGENT.html">Вызвать агента</a></li>
+				<li><a href="#">Отзовы</a></li>
+				<li><a href="AKCUU_MAIN.html">Акции</a></li>
+				<li><a href="#" id="login-btn">Вход</a></li>
+                <li><a href="#" id="register-btn">Регистрация</a></li>
+			</ul>
+		</nav>
+	</hab>
+    <div class="contents">
+            <p class="Second_hab">Услуги похоронного бюро "Вечный покой"</p>
+            <table class="table_us">
+                <tr class="wow">
+                    <td><a href="USLUGU/CREM.html"><img src="https://ritual-24.ru/wordpress/wp-content/uploads/2017/01/012.1.jpg"></a></td>
+                    <td><a href="USLUGU/CREM.html"><p class="podis_tabl">Кремация</p>
+                        <p class="opis_tabl">Сегодня, кремация в Санкт-Петербурге – это один из способов быстрого и более экономного захоронения умершего. Связано это с тем что: стоимость урны меньше, чем цена на гроб; оформление ячейки колумбария стоит дешевле покупки места на кладбище.</p>
+                    </a></td>
+                </tr>
+                <tr class="wow">
+                    <td><a href="USLUGU/ZAHR.html"><img src="https://www.m24.ru/b/d/nBkSUhL2glAimMmyPqzZvc62gYT28pj20yPFnuWR9mOBdDebBizCnTY8qdJf6ReJ58vU9meMMok3Ee2nhSR6ISeO9G1N_wjJ=ibUeaKVQK7sRKCc3NiSRkQ.jpg"></a></td>
+                    <td><a href="USLUGU/ZAHR.html"><p class="podis_tabl">Захоронения</p>
+                        <p class="opis_tabl">Смерть близкого человека всегда не простое испытание как в эмоциональном плане, так и в вопросах организации похорон. Наше агенство предоставит вам все необходимые услуги и возмёт на себя оформление документов.</p>
+                    </a></td>
+                </tr>
+                <tr class="wow">
+                    <td><a href="USLUGU/GRUZ 200.html"><img src="https://ritual-petrovsk.ru/img/gruz200.jpg"></a></td>
+                    <td><a href="USLUGU/GRUZ 200.html"><p class="podis_tabl">Груз 200</p>
+                        <p class="opis_tabl">Понятие «груз 200» стало использоваться в речи во время войны в Афганистане. В то время, таким способом шифровали информационные сообщения о перевозке тел мертвых солдат. В документах для транспортировки груза ставили отметку «200», так как приблизительный вес цинкового гроба с телом составлял 200 кг. В сегодняшних реалиях жизни транспортировка груза 200 — это стандартная услуга большинства ритуальных служб Санкт-Петербурга и других городов. Останки покойного перевозятся в город, где будет проводиться церемония захоронения с помощью автомобильного, железнодорожного транспорта или самолета.</p>
+                    </a></td>
+                </tr>
+            </table>
+    </div>
+    <footer class="fotr">
+		<p>Телефон: +7-800-200-01-22</p>
+		<p>Адрес: Санкт-Петербург Шафировский пр., д. 10 к. 3 стр. 1</p>
+        <p>© Ритуальное Агентство "Вечный покой" || Ритуальные услуги в Санкт-Петербурге</p>
+	</footer>
+     <!-- Скрипт для работы модальных окон -->
+        <script>
+            // Получаем элементы модальных окон
+            const loginModal = document.getElementById('login-modal');
+            const registerModal = document.getElementById('register-modal');
+
+            // Кнопки для открытия модальных окон
+            const loginBtn = document.getElementById('login-btn');
+            const registerBtn = document.getElementById('register-btn');
+
+            // Ссылки для переключения между окнами
+            const switchToRegister = document.getElementById('switch-to-register');
+            const switchToLogin = document.getElementById('switch-to-login');
+
+            // Кнопки закрытия (крестики)
+            const closeButtons = document.querySelectorAll('.close-btn');
+
+            // Открытие модального окна входа
+            loginBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginModal.style.display = 'block';
+                registerModal.style.display = 'none';
+            });
+
+            // Открытие модального окна регистрации
+            registerBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                registerModal.style.display = 'block';
+                loginModal.style.display = 'none';
+            });
+
+            // Переключение на окно регистрации
+            switchToRegister.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'block';
+            });
+
+            // Переключение на окно входа
+            switchToLogin.addEventListener('click', function(e) {
+                e.preventDefault();
+                registerModal.style.display = 'none';
+                loginModal.style.display = 'block';
+            });
+
+            // Закрытие всех модальных окон при нажатии на крестик
+            closeButtons.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    loginModal.style.display = 'none';
+                    registerModal.style.display = 'none';
+                });
+            });
+
+            // Закрытие модального окна при клике вне его содержания
+            window.addEventListener('click', function(e) {
+                if (e.target === loginModal) {
+                    loginModal.style.display = 'none';
+                }
+                if (e.target === registerModal) {
+                    registerModal.style.display = 'none';
+                }
+            });
+        </script>
+	</body>
+</html>

@@ -1,0 +1,117 @@
+<html lang="ru">
+    <head>
+        <link rel="stylesheet" href="Main.css">
+        <meta charset="UTF-8">
+        <title>Ритуальные услуги</title>
+    </head>
+	<body>
+	<hab>
+		<a href="index.html" class="LOGO">Вечный покой</a>
+		<nav>
+			<ul>
+				<li><a href="USLUGU.html">Услуги</a>
+					<ul>
+						<li><a href="USLUGU/CREM.html">Кремация</a></li>
+						<li><a href="USLUGU/ZAHR.html">Захоронения</a></li>
+						<li><a href="USLUGU/GRUZ 200.html">Груз 200</a></li>
+					</ul>
+				</li>
+				<li><a href="PREDMET.html">Ритуальные товары</a>
+					<ul>
+						<li><a href="PREDMET/YRNU.html">Урны для праха</a></li>
+						<li><a href="PREDMET/VENKU.html">Венки</a></li>
+						<li><a href="PREDMET/GORB.html">Гробы</a></li>
+						<li><a href="PREDMET/ODEJDA.html">Одежда</a></li>
+						<li><a href="#">Памятник</a></li>
+						<li><a href="PREDMET/KREST.html">Крест</a></li>
+						<li><a href="#">Усыпальня</a></li> 
+					</ul>
+				</li>
+				<li><a href="FAQ.html">Справочная информация</a></li>
+				<li><a href="CONTACT.html">Контакты</a></li>
+				<li><a href="AGENT.html">Вызвать агента</a></li>
+				<li><a href="#">Отзовы</a></li>
+				<li><a href="AKCUU_MAIN.html">Акции</a></li>
+				<li><a href="#" id="login-btn">Вход</a></li>
+                <li><a href="#" id="register-btn">Регистрация</a></li>
+			</ul>
+		</nav>
+	</hab>
+    <div class="contents">
+        <p class="Second_hab">Контакты Агентства Ритуальных Услуг “Вечный покой”</p>
+        <p class="cont_info">Агентство «Вечный покой» оказывает комплексные ритуальные услуги в Санкт-Петербурге, помогая людям в тяжелый момент с решением вопросов по организации похорон. Наши агенты работают так, чтобы вы не тревожились лишний раз по поводу заказа гроба, аренды катафалка или оформления свидетельства о смерти.</p>
+        <table class="cont_tbl"><tr>
+        <td class="cont_info">Телефон: +7-800-200-0122</td><td class="cont_info">Режим работы: ПН-ВС: 09:00 - 20:00</td>
+        </tr></table>
+        <p align="center"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor:269c3e75276e00bf6ee5ab4a20562af13eaf8b5e0fc3386f45bd4841351556c4&amp;width=700&amp;height=500&amp;lang=ru_RU&amp;scroll=true">
+        </script></p>
+        <p  class="cont_info">Санкт-Петербург Шафировский пр., д. 10 к. 3 стр. 1</p>
+    </div>
+    <footer>
+		<p class="fotr">© Ритуальное Агентство "Вечный покой" || Ритуальные услуги в Санкт-Петербурге</p>
+	</footer>
+     <!-- Скрипт для работы модальных окон -->
+        <script>
+            // Получаем элементы модальных окон
+            const loginModal = document.getElementById('login-modal');
+            const registerModal = document.getElementById('register-modal');
+
+            // Кнопки для открытия модальных окон
+            const loginBtn = document.getElementById('login-btn');
+            const registerBtn = document.getElementById('register-btn');
+
+            // Ссылки для переключения между окнами
+            const switchToRegister = document.getElementById('switch-to-register');
+            const switchToLogin = document.getElementById('switch-to-login');
+
+            // Кнопки закрытия (крестики)
+            const closeButtons = document.querySelectorAll('.close-btn');
+
+            // Открытие модального окна входа
+            loginBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginModal.style.display = 'block';
+                registerModal.style.display = 'none';
+            });
+
+            // Открытие модального окна регистрации
+            registerBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                registerModal.style.display = 'block';
+                loginModal.style.display = 'none';
+            });
+
+            // Переключение на окно регистрации
+            switchToRegister.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'block';
+            });
+
+            // Переключение на окно входа
+            switchToLogin.addEventListener('click', function(e) {
+                e.preventDefault();
+                registerModal.style.display = 'none';
+                loginModal.style.display = 'block';
+            });
+
+            // Закрытие всех модальных окон при нажатии на крестик
+            closeButtons.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    loginModal.style.display = 'none';
+                    registerModal.style.display = 'none';
+                });
+            });
+
+            // Закрытие модального окна при клике вне его содержания
+            window.addEventListener('click', function(e) {
+                if (e.target === loginModal) {
+                    loginModal.style.display = 'none';
+                }
+                if (e.target === registerModal) {
+                    registerModal.style.display = 'none';
+                }
+            });
+        </script>
+	</body>
+</html>
