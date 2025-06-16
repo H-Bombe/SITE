@@ -162,7 +162,7 @@
                 });
             });
 
-	    // Закрытие модального окна при клике вне его содержания
+            // Закрытие модального окна при клике вне его содержания
             window.addEventListener('click', function(e) {
                 if (e.target === loginModal) {
                     loginModal.style.display = 'none';
@@ -172,30 +172,29 @@
                 }
             });
 			
-	//Устанавливает дату сегодняшнюю
-	document.getElementById('reg-birthdate').max = new Date().toISOString().split('T')[0];
-	function updateMaxDate(){
-		document.getElementById('reg-birthdate').max = new Date().toISOString().split('T')[0];
-	}
+            //Устанавливает дату сегодняшнюю
+            document.getElementById('reg-birthdate').max = new Date().toISOString().split('T')[0];
+            function updateMaxDate(){
+                document.getElementById('reg-birthdate').max = new Date().toISOString().split('T')[0];
+            }
+            
+            // Функция для проверки ввода (только кириллица)
+            function validateCyrillic(input) {
+                input.value = input.value.replace(/[^а-яА-ЯёЁ\s-]/g, '');
+            }
 
-	
-	// Функция для проверки ввода (только кириллица)
-	function validateCyrillic(input) {
-		input.value = input.value.replace(/[^а-яА-ЯёЁ\s-]/g, '');
-	}
+            // Назначаем обработчики событий для полей ФИО
+            document.getElementById('reg-name').addEventListener('input', function() {
+                validateCyrillic(this);
+            });
 
-	// Назначаем обработчики событий для полей ФИО
-	document.getElementById('reg-name').addEventListener('input', function() {
-		validateCyrillic(this);
-	});
+            document.getElementById('reg-surname').addEventListener('input', function() {
+                validateCyrillic(this);
+            });
 
-	document.getElementById('reg-surname').addEventListener('input', function() {
-		validateCyrillic(this);
-	});
-
-	document.getElementById('reg-patronymic').addEventListener('input', function() {
-		validateCyrillic(this);
-	});
+            document.getElementById('reg-patronymic').addEventListener('input', function() {
+                validateCyrillic(this);
+            });
 			
         </script>
 	</body>
