@@ -172,11 +172,11 @@
                 }
             });
 			
-            //Устанавливает дату сегодняшнюю
-            document.getElementById('reg-birthdate').max = new Date().toISOString().split('T')[0];
-            function updateMaxDate(){
-                document.getElementById('reg-birthdate').max = new Date().toISOString().split('T')[0];
-            }
+			//Устанавливает дату сегодняшнюю
+			document.getElementById('reg-birthdate').max = new Date().toISOString().split('T')[0];
+			function updateMaxDate(){
+				document.getElementById('reg-birthdate').max = new Date().toISOString().split('T')[0];
+			}
             
             // Функция для проверки ввода (только кириллица)
             function validateCyrillic(input) {
